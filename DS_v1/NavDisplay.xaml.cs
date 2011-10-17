@@ -31,7 +31,7 @@ namespace DS_v1
         }
         System.Windows.Threading.DispatcherTimer dt = new System.Windows.Threading.DispatcherTimer();
 
-        private static readonly GeoCoordinate DefaultLocation = new GeoCoordinate(47.639631, -122.127713);
+       // private static readonly GeoCoordinate DefaultLocation = new GeoCoordinate(47.639631, -122.127713);
 
        
 
@@ -67,21 +67,16 @@ namespace DS_v1
             }
             catch (Exception ex)
             {
-                var response = new WebClient();
-                response.DownloadStringCompleted += (s, ea) =>
-                {
-                    System.Windows.MessageBox.Show(ea.Result);
-                };
-
+                System.Windows.MessageBox.Show("Connection error. Please try again. " + ex.Message);
             }
 
         }
 
         //when using emulator
-        //private const string ip = "http://localhost:8182/";
+       // private const string ip = "http://localhost:8182/";
 
         //when using device
-        // private const string ip = "http://192.168.2.71:8182/";
+     //  private const string ip = "http://192.168.0.26:8182/";
 
         //good for both
        private const string ip = "http://192.168.1.1:8182/";
@@ -93,5 +88,7 @@ namespace DS_v1
             Uri theUri = new Uri("/MainPage.xaml", UriKind.Relative);
             NavigationService.Navigate(theUri);
         }
+
+        
     }
 }

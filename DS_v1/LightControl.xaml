@@ -23,44 +23,25 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="DS_v1" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Light Control" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="PageTitle" Text="Light Control" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="51" />
         </StackPanel>
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="On" Height="72" HorizontalAlignment="Left" Margin="257,333,0,0" Name="btnnlon" VerticalAlignment="Top" Width="84" Click="btnon_Click" />
-            <Button Content="Off" Height="72" HorizontalAlignment="Left" Margin="318,333,0,0" Name="btnnloff" VerticalAlignment="Top" Width="89" Click="btnoff_Click" />
-            <TextBlock Height="30" Name="txtNavLights" Text="Navigation Lights" Margin="12,357,266,220" />
-<Image Height="187" HorizontalAlignment="Left" Margin="59,30,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="321" Source="/DS_v1;component/Images/Demon_Mobile.jpg" />
-            <Button Content="On" Height="72" HorizontalAlignment="Left" Margin="257,431,0,0" Name="btnuwlon" VerticalAlignment="Top" Width="84" Click="btnuwlon_Click" />
-            <Button Content="Off" Height="72" HorizontalAlignment="Left" Margin="318,431,0,0" Name="btnuwloff" VerticalAlignment="Top" Width="89" Click="btnuwloff_Click" />
-            <TextBlock Height="30" Margin="12,455,266,122" Name="textBlock1" Text="UnderWater Lights" />
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,1,12,-1">
+            <Image Height="267" HorizontalAlignment="Left" Margin="13,12,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="438" Source="/Demonstrator;component/Images/Demon_Mobile2.jpg" />
             <Button Content="Done" Height="60" HorizontalAlignment="Left" Margin="337,547,0,0" Name="button3" VerticalAlignment="Top" Width="113" FontSize="15" Click="button3_Click" />
-            <Rectangle Height="11" HorizontalAlignment="Left" Margin="295,117,0,0" Name="nl1" StrokeThickness="1" VerticalAlignment="Top" Width="20">
-                <Rectangle.Stroke>
-                    <SolidColorBrush />
-                </Rectangle.Stroke>
-            </Rectangle>
-            <Rectangle Height="11" HorizontalAlignment="Left" Margin="263,95,0,0" Name="nl2" StrokeThickness="1" VerticalAlignment="Top" Width="20">
-                <Rectangle.Stroke>
-                    <SolidColorBrush />
-                </Rectangle.Stroke>
-            </Rectangle>
-            <Rectangle Height="11" HorizontalAlignment="Left" Margin="78,61,0,0" Name="ruwl2" StrokeThickness="1" VerticalAlignment="Top" Width="17">
-                <Rectangle.Stroke>
-                    <SolidColorBrush />
-                </Rectangle.Stroke>
-            </Rectangle>
-            <Rectangle Height="11" HorizontalAlignment="Left" Margin="263,152,0,0" Name="ruw1" StrokeThickness="1" VerticalAlignment="Top" Width="17">
-                <Rectangle.Stroke>
-                    <SolidColorBrush />
-                </Rectangle.Stroke>
-            </Rectangle>
-            <Rectangle Height="11" HorizontalAlignment="Left" Margin="151,160,0,0" Name="uwl3" StrokeThickness="1" VerticalAlignment="Top" Width="17">
-                <Rectangle.Stroke>
-                    <SolidColorBrush />
-                </Rectangle.Stroke>
-            </Rectangle>
+            <Rectangle Height="14" HorizontalAlignment="Left" Margin="339,137,0,0" Name="nl1" StrokeThickness="1" VerticalAlignment="Top" Width="23">
+               </Rectangle>
+            <Rectangle Height="14" HorizontalAlignment="Left" Margin="286,104,0,0" Name="nl2" StrokeThickness="1" VerticalAlignment="Top" Width="23">
+               </Rectangle>
+            <Rectangle Height="14" HorizontalAlignment="Left" Margin="45,57,0,0" Name="ruwl2" StrokeThickness="1" VerticalAlignment="Top" Width="23">
+                </Rectangle>
+            <Rectangle Height="14" HorizontalAlignment="Left" Margin="303,181,0,0" Name="ruw1" StrokeThickness="1" VerticalAlignment="Top" Width="23">
+                </Rectangle>
+            <Rectangle Height="14" HorizontalAlignment="Left" Margin="135,199,0,0" Name="uwl3" StrokeThickness="1" VerticalAlignment="Top" Width="23">
+                </Rectangle>
+           
+            <toolkit:ToggleSwitch Header="NavigationLights" Height="111" HorizontalAlignment="Left" Margin="12,326,0,0" Name="tsNavlights" VerticalAlignment="Top" Width="456" Checked="toggleSwitch2_Checked" Unchecked="toggleSwitch2_Unchecked" />
+            <toolkit:ToggleSwitch Header="UnderWater Lights" Height="111" HorizontalAlignment="Left" Margin="12,414,0,0" Name="tsUnderwlights" VerticalAlignment="Top" Width="456" Checked="tsUnderwlights_Checked" Unchecked="tsUnderwlights_Unchecked" />
             <!--<toolkit:ToggleSwitch Header="Navigation Lights" Height="115" HorizontalAlignment="Left" Margin="12,236,0,0" Name="ts1" VerticalAlignment="Top" Width="456" />-->
             <!-- <StackPanel Orientation="Vertical">
                 <toolkit:ToggleSwitch Header="Lights" IsChecked="True" IsEnabled="True" />
@@ -75,7 +56,7 @@
                 </toolkit:ToggleSwitch>
             </StackPanel>-->
         </Grid>
-
+        <toolkit:ToggleSwitch Grid.Row="1" Header="ToggleSwitch" Height="111" HorizontalAlignment="Left" Margin="471,277,0,0" Name="toggleSwitch1" VerticalAlignment="Top" Width="456" />
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->

@@ -14,7 +14,6 @@ using System.IO;
 using Microsoft.Phone.Reactive;
 using System.Threading;
 using System.Xml.Serialization;
-using System.Net;
 using System.Windows.Threading;
 using System.Runtime.Serialization.Json;
 using System.Text;
@@ -43,13 +42,13 @@ namespace DS_v1
         }
 
         //when using emulator
-       // private const string ip = "http://localhost:8182/";
+        //private const string ip = "http://localhost:8182/";
 
         //when using device
-       // private const string ip = "http://192.168.2.71:8182/";
+        // private const string ip = "http://192.168.0.26:8182/";
 
         //good for both
-        private const string ip = "http://192.168.1.1:8182/";
+       private const string ip = "http://192.168.1.1:8182/";
 
         void Tick(object sender, EventArgs e)
         {
@@ -96,11 +95,7 @@ namespace DS_v1
             }
             catch (Exception ex)
             {
-                var response = new WebClient();
-                response.DownloadStringCompleted += (s, ea) =>
-                {
-                    System.Windows.MessageBox.Show(ea.Result);
-                };
+               System.Windows.MessageBox.Show("Connection error. Please try again. " + ex.Message);
             }
         }
 

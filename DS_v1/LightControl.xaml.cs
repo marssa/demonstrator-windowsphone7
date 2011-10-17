@@ -14,7 +14,6 @@ using System.IO;
 using Microsoft.Phone.Reactive;
 using System.Threading;
 using System.Xml.Serialization;
-using System.Net;
 using System.Windows.Threading;
 using System.Runtime.Serialization.Json;
 using System.Text;
@@ -57,12 +56,17 @@ namespace DS_v1
                     {
                         nl1.Fill = new SolidColorBrush(Colors.Transparent);
                         nl2.Fill = new SolidColorBrush(Colors.Transparent);
+                        ruwl2.Fill = new SolidColorBrush(Colors.Transparent);
+                        tsNavlights.IsChecked = false;
+
                        
                     }
                     else if (st == "True")
                     {
                         nl1.Fill = new SolidColorBrush(Colors.Green);
-                        nl2.Fill = new SolidColorBrush(Colors.Red);                        
+                        nl2.Fill = new SolidColorBrush(Colors.Red);
+                        ruwl2.Fill = new SolidColorBrush(Colors.White);
+                        tsNavlights.IsChecked = true;
                     }                    
 
 
@@ -72,13 +76,15 @@ namespace DS_v1
                     {
                         uwl3.Fill = new SolidColorBrush(Colors.Transparent);
                         ruw1.Fill = new SolidColorBrush(Colors.Transparent);
-                        ruwl2.Fill = new SolidColorBrush(Colors.Transparent);
+                        tsUnderwlights.IsChecked = false;
+
                     }
                     else if (under == "True")
                     {
                         uwl3.Fill = new SolidColorBrush(Colors.White);
                         ruw1.Fill = new SolidColorBrush(Colors.White);
-                        ruwl2.Fill = new SolidColorBrush(Colors.White);
+                        tsUnderwlights.IsChecked = true;
+                        
                     }
                 };
 
@@ -86,11 +92,7 @@ namespace DS_v1
             }
             catch (Exception ex)
             {
-                var response = new WebClient();
-                response.DownloadStringCompleted += (s, ea) =>
-                {
-                    System.Windows.MessageBox.Show(ea.Result);
-                };
+                System.Windows.MessageBox.Show("Connection error. Please try again. " + ex.Message);
                 
             }
 
@@ -100,61 +102,65 @@ namespace DS_v1
        //private const string ip = "http://localhost:8182/";
 
         //when using device
-      // private const string ip = "http://192.168.2.71:8182/";
-
+     //  private const string ip = "http://192.168.0.26:8182/";
+//
         //good for both
        private const string ip = "http://192.168.1.1:8182/";
 
-        private void btnon_Click(object sender, RoutedEventArgs e)
-        {
 
-            nl1.Fill = new SolidColorBrush(Colors.Green);
-            nl2.Fill = new SolidColorBrush(Colors.Red);
+        //navigation lights off
+       private void toggleSwitch2_Unchecked(object sender, RoutedEventArgs e)
+       {
+           nl1.Fill = new SolidColorBrush(Colors.Transparent);
+           nl2.Fill = new SolidColorBrush(Colors.Transparent);
+           ruwl2.Fill = new SolidColorBrush(Colors.Transparent);
 
+           var uri = new Uri(ip + "lighting/navigationLights/false");
+           IObservable<string> s = HttpGet(uri);
+       }
 
-            var uri = new Uri(ip + "lighting/navigationLights/true");
-            IObservable<string> s = HttpGet(uri);
-            
-            HttpPost(uri, "true");
-
-            IObservable<string> get = HttpGet(uri);
-          
-
-        }
-
-
-        private void btnoff_Click(object sender, RoutedEventArgs e)
-        {
-            nl1.Fill = new SolidColorBrush(Colors.Transparent);
-            nl2.Fill = new SolidColorBrush(Colors.Transparent);
-
-            var uri = new Uri(ip + "lighting/navigationLights/false");
-            IObservable<string> s = HttpGet(uri);
-                     
-
-        }
-
-        private void btnuwlon_Click(object sender, RoutedEventArgs e)
-        {
-            ruwl2.Fill = new SolidColorBrush(Colors.White);
-            ruw1.Fill = new SolidColorBrush(Colors.White);
-            uwl3.Fill = new SolidColorBrush(Colors.White);
-
-            var uri = new Uri(ip + "lighting/underwaterLights/true");
-            IObservable<string> s = HttpGet(uri);
+       //navigation lights on
+        private void toggleSwitch2_Checked(object sender, RoutedEventArgs e)
+       {
+           nl1.Fill = new SolidColorBrush(Colors.Green);
+           nl2.Fill = new SolidColorBrush(Colors.Red);
+           ruwl2.Fill = new SolidColorBrush(Colors.White);
 
 
-        }
+           var uri = new Uri(ip + "lighting/navigationLights/true");
+           IObservable<string> s = HttpGet(uri);
 
-        private void btnuwloff_Click(object sender, RoutedEventArgs e)
-        {
-            ruwl2.Fill = new SolidColorBrush(Colors.Transparent);
-            ruw1.Fill = new SolidColorBrush(Colors.Transparent);
-            uwl3.Fill = new SolidColorBrush(Colors.Transparent);
+           //  HttpPost(uri, "true");
 
-            var uri = new Uri(ip + "lighting/underwaterLights/false");
-            IObservable<string> s = HttpGet(uri);
-        }
+           //  IObservable<string> get = HttpGet(uri);
+       }
+
+
+        //underwater lights on
+       private void tsUnderwlights_Checked(object sender, RoutedEventArgs e)
+       {
+           
+           ruw1.Fill = new SolidColorBrush(Colors.White);
+           uwl3.Fill = new SolidColorBrush(Colors.White);
+
+           var uri = new Uri(ip + "lighting/underwaterLights/true");
+           IObservable<string> s = HttpGet(uri);
+       }
+
+        //underwaterlights off
+       private void tsUnderwlights_Unchecked(object sender, RoutedEventArgs e)
+       {
+           
+           ruw1.Fill = new SolidColorBrush(Colors.Transparent);
+           uwl3.Fill = new SolidColorBrush(Colors.Transparent);
+
+           var uri = new Uri(ip + "lighting/underwaterLights/false");
+           IObservable<string> s = HttpGet(uri);
+       }
+
+       
+
+       //Done button pressed
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
@@ -291,8 +297,13 @@ namespace DS_v1
 
             private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
             {
-
+                
+          
             }
+
+            
+
+    
           
     }
         public enum MethodType

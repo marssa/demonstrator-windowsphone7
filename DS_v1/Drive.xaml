@@ -44,51 +44,51 @@
             
             <Button Content="" Height="100" HorizontalAlignment="Left" Margin="179,514,0,0" Name="btnstop" VerticalAlignment="Top" Width="100" Click="btnstop_Click" Grid.Row="1" Grid.ColumnSpan="2">
                 <Button.Background>
-                    <ImageBrush ImageSource="/DS_v1;component/Images/stop.jpg" />
+                    <ImageBrush ImageSource="/Demonstrator;component/Images/stop.jpg" />
                 </Button.Background>
             </Button>
             <Button Content="Done" FontSize="20" Height="103" HorizontalAlignment="Left" Margin="93,528,0,0" Name="btndone" VerticalAlignment="Top" Width="113" Click="button3_Click" Grid.Row="1" Grid.Column="1" />
             <Button Height="100" HorizontalAlignment="Left" Margin="179,0,0,123" Name="btndoubledown" VerticalAlignment="Bottom" Width="100" Click="btndoubledown_Click" Grid.Row="1" Grid.ColumnSpan="2">
                 <Button.Background>
-                    <ImageBrush ImageSource="/DS_v1;component/Images/doubledown.jpg" />
+                    <ImageBrush ImageSource="/Demonstrator;component/Images/doubledown.jpg" />
                 </Button.Background>
             </Button>
             <Button Height="100" HorizontalAlignment="Left" Margin="179,332,0,0" Name="btndown" VerticalAlignment="Top" Width="100" Click="btndown_Click" Grid.Row="1" Grid.ColumnSpan="2">
                 <Button.Background>
-                    <ImageBrush ImageSource="/DS_v1;component/Images/DownArrow.jpg" />
+                    <ImageBrush ImageSource="/Demonstrator;component/Images/DownArrow.jpg" />
                 </Button.Background>
             </Button>
             <Button Height="100" HorizontalAlignment="Left" Margin="179,175,0,0" Name="btnup" VerticalAlignment="Top" Width="100" Click="btnup_Click" Grid.Row="1" Grid.ColumnSpan="2">
                 <Button.Background>
-                    <ImageBrush ImageSource="/DS_v1;component/Images/UpArrow.jpg" />
+                    <ImageBrush ImageSource="/Demonstrator;component/Images/UpArrow.jpg" />
                 </Button.Background>
             </Button>
 
             <Button Height="100" HorizontalAlignment="Left" Margin="179,90,0,0" Name="btndoubleup" VerticalAlignment="Top" Width="100" Click="btndoubleup_Click" Grid.Row="1" Grid.ColumnSpan="2">
                 <Button.Background>
-                    <ImageBrush ImageSource="/DS_v1;component/Images/doubleup.jpg" />
+                    <ImageBrush ImageSource="/Demonstrator;component/Images/doubleup.jpg" />
                 </Button.Background>
             </Button>
             <Button Height="100" HorizontalAlignment="Left" Margin="23,256,0,0" Name="btnright" VerticalAlignment="Top" Width="100" Click="btnright_Click" Grid.Row="1" Grid.Column="1">
                 <Button.Background>
-                    <ImageBrush ImageSource="/DS_v1;component/Images/rightArrow.jpg" />
+                    <ImageBrush ImageSource="/Demonstrator;component/Images/rightArrow.jpg" />
                 </Button.Background>
             </Button>
 
             <Button Height="100" HorizontalAlignment="Left" Margin="111,256,0,0" Name="btndoubleright" VerticalAlignment="Top" Width="100" Click="btndoubleright_Click" Grid.Row="1" Grid.Column="1">
                 <Button.Background>
-                    <ImageBrush ImageSource="/DS_v1;component/Images/doubleright.jpg" />
+                    <ImageBrush ImageSource="/Demonstrator;component/Images/doubleright.jpg" />
                 </Button.Background>
             </Button>
 
             <Button Height="100" HorizontalAlignment="Left" Margin="0,256,0,0" Name="btndoubleleft" VerticalAlignment="Top" Width="100" Click="btndoubleleft_Click" Grid.Row="1">
                 <Button.Background>
-                    <ImageBrush ImageSource="/DS_v1;component/Images/doubleleft.jpg" />
+                    <ImageBrush ImageSource="/Demonstrator;component/Images/doubleleft.jpg" />
                 </Button.Background>
             </Button >
             <Button  Height="100" HorizontalAlignment="Left" Margin="91,256,0,0" Name="btnleft" VerticalAlignment="Top" Width="100" Click="btnleft_Click" Grid.Row="1">
                 <Button.Background>
-                    <ImageBrush ImageSource="/DS_v1;component/Images/leftArrow.jpg" />
+                    <ImageBrush ImageSource="/Demonstrator;component/Images/leftArrow.jpg" />
                 </Button.Background>
             </Button>
 
