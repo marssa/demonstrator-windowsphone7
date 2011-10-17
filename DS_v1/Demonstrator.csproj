@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DS_v1</RootNamespace>
-    <AssemblyName>DS_v1</AssemblyName>
+    <RootNamespace>Demonstrator</RootNamespace>
+    <AssemblyName>Demonstrator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
@@ -52,6 +52,7 @@
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e" />
     <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
     <Reference Include="Microsoft.Phone.Reactive" />
     <Reference Include="Newtonsoft.Json.WindowsPhone">
@@ -133,10 +134,12 @@
     <Resource Include="Images\stop.jpg" />
     <Resource Include="Images\UpArrow.jpg" />
     <Resource Include="Images\y2.png" />
-    <Resource Include="Images\Demon_Mobile.jpg" />
+    <Content Include="Images\Demon_Mobile.jpg" />
     <Resource Include="Images\Demon_Mobile_trans.jpg" />
     <Resource Include="Images\doubleleft.jpg" />
     <Resource Include="Images\doubleright.jpg" />
+    <Resource Include="Images\Demon_Mobile1.jpg" />
+    <Resource Include="Images\Demon_Mobile2.jpg" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
